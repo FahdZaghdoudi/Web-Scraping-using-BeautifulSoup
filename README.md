@@ -1,12 +1,10 @@
 # Web-Scraping-using-BeautifulSoup
-This repository contains some scripts written by me to extract data from Tunisian News Websites using a python and it's package Beautifulsoup.
+This repository contains some scripts to extract data from Tunisian News' Websites using python and it's package Beautifulsoup.
+
+The need and importance of extracting data from the web is becoming increasingly loud and clear.
+For some <b>Artificial Intelligence projects</b>, I find myself in a situation where I need to extract data from the web.
 
 
-The need and importance of extracting data from the web is becoming increasingly loud and clear. Every few weeks, I find myself in a situation where we need to extract data from the web.
-
-
-
-Web scraping (web harvesting or web data extraction) is data scraping used for extracting data from websites. Web scraping software may access the World Wide Web directly using the Hypertext Transfer Protocol, or through a web browser.
 
 In this repo Web Scraping is done on an E-Commerce Website using BeautifulSoup in [Python](https://www.python.org/)
 
@@ -21,6 +19,12 @@ A collection of small programs that extract data from a website and packages it 
 1. Check a website's Term and Conditions before scraping it and read the statements about legal use of the data. 
 2. Do not request data from the website too aggressiely and ensure that your program behaves in a reasonable manner.
 3. Revisit the website and rewrite code as needed as the layout of the site may change.
+
+
+
+### Usage
+
+You can open the ipynb on Jupyter Notebook locally or use [Google Colab](https://colab.research.google.com/)
 
 
 
