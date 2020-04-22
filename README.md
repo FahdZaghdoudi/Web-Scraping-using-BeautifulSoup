@@ -16,7 +16,7 @@ This repo contains some scripts to extract data from Tunisian Websites for News 
 ## Workflow
 1. Insect the page
 2. Obtain HTML
-3. Choose a parser
+3. Choose a parser (lxml , html5lib , html.parser)
 4. Create a beautifulsoup object
 5. Extract tags that we need
 6. Store the data in lists
