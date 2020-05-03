@@ -91,7 +91,7 @@ for url in full_urls:
     # Append to our lists
     article.append(str(art)[163:-15])
     titles.append(str(tit)[2:-2])
-    types.append('-')
+    types.append('nan')
     
     # Incrementing the loop counter
     i = i+1
