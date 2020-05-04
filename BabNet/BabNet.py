@@ -35,9 +35,6 @@ relative_urls = [link.get('href') for link in links]
 # Transforming to absolute path URLs
 full_urls = [urljoin(base_site, url) for url in relative_urls]
 
-#to avoid limiting the number of requests, we should tellpython to wait between each request
-#we importtime library
-#import time
 # initialize lists to store titles, types and articles for each webpage
 article = []
 titles = []
@@ -48,10 +45,6 @@ i = 0
 
 # Loop through each URL in note_urls
 for url in full_urls:
-    
-    #wait 1 seconde between requests
-    #time.sleep(1)
-    
     # connect to every webpage
     note_resp = requests.get(url)
     
@@ -104,5 +97,5 @@ import pandas as pd
 # Create a dataframe with our scraped data
 df = pd.DataFrame(list(zip(full_urls, titles, article, types)), columns =['link', 'titles', 'article', 'type']) 
 # Create and download the csv file
-path = ('BabNett.csv')
+path = ('BabNet.csv')
 df.to_csv(path, encoding='utf-8-sig')
