@@ -37,7 +37,7 @@ full_urls = [urljoin(base_site, url) for url in relative_urls]
 
 #to avoid limiting the number of requests, we should tellpython to wait between each request
 #we importtime library
-import time
+#import time
 # initialize lists to store titles, types and articles for each webpage
 article = []
 titles = []
@@ -45,8 +45,6 @@ types = []
 
 # creating a loop counter
 i = 0
-
-print('-------------------------- Beginning of Scraping --------------------------')
 
 # Loop through each URL in note_urls
 for url in full_urls:
@@ -57,17 +55,12 @@ for url in full_urls:
     # connect to every webpage
     note_resp = requests.get(url)
     
-    
     # checking if the request is successful
-    if note_resp.status_code == 200:            # Everything is OK!
-        print('URL #{0}: {1}'.format(i+1,url))    # print out the number of iteration and the URL to keep track of place in loop
-    
-    else:                                       # Something is wrong!
+    if note_resp.status_code != 200:
         print('Status code {0}: Skipping URL #{1}: {2}'.format(note_resp.status_code, i+1, url))
         i = i+1
         continue
         
-    
     # get HTML from webpage
     note_html = note_resp.content
     
@@ -91,7 +84,6 @@ for url in full_urls:
     # find types
     note_types = note_soup.find_all('li' , class_ = 'nav-item active')
     
-    
     # Transforming to text and cleaning every desired element in the page
     art = [(p.text).replace('\n','').replace('\t','').replace('\r','') for p in note_pars]
     tit = [(t.text).replace('\n','').replace('\t','').replace('\r','') for t in note_titles]
@@ -107,39 +99,10 @@ for url in full_urls:
     
 print('-------------------------- SCRAPING DONE --------------------------')
 
-
 # Import pandas to create our dataframe 
 import pandas as pd
 # Create a dataframe with our scraped data
 df = pd.DataFrame(list(zip(full_urls, titles, article, types)), columns =['link', 'titles', 'article', 'type']) 
 # Create and download the csv file
-path = ('C:/Users/FAHD/Desktop/Formation/Web Scraping/AI Squad/BabNet/BabNett.csv')
+path = ('BabNett.csv')
 df.to_csv(path, encoding='utf-8-sig')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
