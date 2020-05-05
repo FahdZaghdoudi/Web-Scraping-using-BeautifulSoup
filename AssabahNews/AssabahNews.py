@@ -37,9 +37,6 @@ relative_urls = [link.get('href') for link in links]
 # Transforming to absolute path URLs
 full_urls = [urljoin(base_site, url) for url in relative_urls]
 
-#to avoid limiting the number of requests, we should tellpython to wait between each request
-#we importtime library
-import time
 # initialize lists to store titles and articles for each webpage
 article = []
 titles = []
@@ -49,10 +46,7 @@ types = []
 i = 0
 
 # Loop through each URL in note_urls
-for url in full_urls:
-    #wait 1 second between requests
-    time.sleep(1)
-    
+for url in full_urls[0:50]:   
     # connect to every webpage
     note_resp = requests.get(url)
     
