@@ -71,7 +71,7 @@ for url in full_urls:
     # find the type
     note_type = note_soup.find('div' , class_ = 'field-item even')
     tp = BeautifulSoup(str(note_type), "html.parser")
-    note_types = par.find('a')
+    note_types = par.find_all('a')
     
     # Transforming to text and cleaning every desired element in the page
     art = [(p.text).replace('\n','').replace('\t','').replace('\r','') for p in note_pars]
