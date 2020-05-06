@@ -44,7 +44,7 @@ types = []
 i = 0
 
 # Loop through each URL in note_urls
-for url in full_urls:
+for url in full_urls[0:100]:
     # connect to every webpage
     note_resp = requests.get(url)
     
